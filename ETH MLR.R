@@ -64,8 +64,7 @@ summary(fit)$r.squared
 vdf<-data.frame(ETH,p=fit$fitted.values,r=fit$residuals)
 
 
-hist(vdf$r, main = "Histogram Of Residuals", xlab = "Residuals")      # display histgram of residuals - hopefully symmetric, bell shaped
-
+hist(vdf$r, main = "Histogram Of Residuals", xlab = "Residuals")      
 coefs <- fit$coefficients
 
 
@@ -73,7 +72,6 @@ plot(vdf$p,vdf$Price..Close., main = "Actual vs Predicted ETH Price ($)", xlab =
 
 abline(lm(vdf$Price..Close. ~ vdf$p), col = "red")
 
-# positive. strong?  linear? no outliers? no heteroscedasticity? 
 pl.2ts(vdf$Price..Close.,vdf$p, "Times Series Plot of Actual Price and Predicted")
 
 
